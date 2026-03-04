@@ -1,0 +1,19 @@
+# Code snippet used to generate Importance Evidence 
+
+import xgboost as xgb  
+
+import matplotlib.pyplot as plt 
+
+# Train baseline for feature importance 
+
+ model = xgb.XGBClassifier().fit(X_train, y_train) 
+
+# Evidence: Plotting the Top 10 Features 
+
+ plt.figure(figsize=(10,6)) 
+
+xgb.plot_importance(model, max_num_features=10, importance_type='gain') 
+
+plt.title("Week 4 Evidence: Feature Importance (Gain)") 
+
+ plt.show() 
